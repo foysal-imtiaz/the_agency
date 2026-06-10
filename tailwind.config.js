@@ -8,51 +8,86 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Core neutrals
-        'brand-black': '#000000',
-        'brand-charcoal': '#07070B',
-        'brand-dark': '#31313A',
-        'brand-mid': '#474754',
-        'brand-border': '#E4E3DE',
-        'brand-off-white': '#FBFBF8',
-        'brand-cream': '#F9F9FB',
-        'brand-grain': '#F5F4EF',
-        'brand-red': '#EF4444',
-        // Orange / Mistral accent palette
-        'brand-orange': '#F97316',        // primary accent — buttons, highlights
-        'brand-orange-light': '#FFF7ED',  // tint surface
-        'brand-orange-mid': '#FDBA74',    // softer orange
-        'brand-orange-dark': '#EA580C',   // hover state
-        'brand-orange-border': '#FED7AA', // border tint
+        /* shadcn CSS-variable tokens */
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        /* Brand palette */
+        'brand-black':         '#09090b',
+        'brand-charcoal':      '#07070B',
+        'brand-dark':          '#27272a',
+        'brand-mid':           '#71717a',
+        'brand-border':        '#e4e4e7',
+        'brand-off-white':     '#FBFBF8',
+        'brand-cream':         '#F9F9FB',
+        'brand-grain':         '#F5F4EF',
+        'brand-red':           '#EF4444',
+        /* Orange accent */
+        'brand-orange':        '#F97316',
+        'brand-orange-light':  '#fff7ed',
+        'brand-orange-mid':    '#FDBA74',
+        'brand-orange-dark':   '#EA580C',
+        'brand-orange-border': '#fed7aa',
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       fontSize: {
-        'display': ['48px', { lineHeight: '56px', letterSpacing: '0px' }],
-        'h2': ['32px', { lineHeight: '40px', letterSpacing: '0px' }],
-        'h3': ['24px', { lineHeight: '32px', letterSpacing: '0px' }],
-        'body-lg': ['20px', { lineHeight: '28px' }],
-        'body': ['16px', { lineHeight: '24px' }],
-        'body-sm': ['14px', { lineHeight: '20px' }],
-        'caption': ['12px', { lineHeight: '16px' }],
+        'display': ['3rem',   { lineHeight: '1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'h2':      ['2rem',   { lineHeight: '1.2', letterSpacing: '-0.015em' }],
+        'h3':      ['1.5rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.75' }],
+        'body':    ['1rem',   { lineHeight: '1.5' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.5' }],
+        'caption': ['0.75rem',  { lineHeight: '1.33' }],
       },
       borderRadius: {
-        'brand': '6px',
-        'brand-lg': '12px',
+        /* shadcn uses --radius = 0.5rem (8px) */
+        'brand':    'calc(var(--radius))',
+        'brand-lg': 'calc(var(--radius) + 4px)',
+        lg:  'calc(var(--radius))',
+        md:  'calc(var(--radius) - 2px)',
+        sm:  'calc(var(--radius) - 4px)',
       },
       boxShadow: {
-        'brand-sm': '0px 1px 2px 0px rgba(21,21,31,0.06), 0px 0px 1px 0px rgba(21,21,31,0.04)',
-        'brand-md': '0px 4px 8px 0px rgba(21,21,31,0.06), 0px 2px 4px 0px rgba(21,21,31,0.04)',
-        'brand-lg': '0px 12px 24px 0px rgba(21,21,31,0.08), 0px 4px 8px 0px rgba(21,21,31,0.04)',
-        'orange-sm': '0px 1px 3px 0px rgba(249,115,22,0.15)',
-        'orange-md': '0px 4px 12px 0px rgba(249,115,22,0.2)',
+        /* shadcn shadow scale */
+        'brand-sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'brand-md': '0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05)',
+        'brand-lg': '0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05)',
+        'orange-sm': '0 1px 3px 0 rgba(249,115,22,0.2)',
+        'orange-md': '0 4px 14px 0 rgba(249,115,22,0.25)',
       },
-      maxWidth: {
-        'container': '1440px',
+      maxWidth: { 'container': '1440px' },
+      minHeight: { 'touch': '2.75rem' },
+      keyframes: {
+        'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+        'accordion-up':   { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
       },
-      minHeight: {
-        'touch': '48px',
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up':   'accordion-up 0.2s ease-out',
       },
     },
   },

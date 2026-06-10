@@ -2,25 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Geist font (shadcn standard) ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-html {
-  scroll-behavior: smooth;
+/* shadcn CSS custom properties */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 24 96% 53%;        /* orange #F97316 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 37 100% 97%;        /* orange-light tint */
+    --accent-foreground: 24 96% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 20% 88%;         /* brand-border */
+    --input: 35 20% 88%;
+    --ring: 24 96% 53%;           /* orange focus ring */
+    --radius: 0.5rem;             /* shadcn default = 8px */
+  }
 }
 
-body {
-  background-color: #FBFBF8;
-  color: #000000;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FBFBF8;
+    color: #09090b;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* ── shadcn-style button base ── */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    min-height: 2.5rem;
+    padding: 0.5rem 1rem;
+  }
+  .btn-default {
+    @apply btn bg-brand-orange text-white hover:bg-brand-orange-dark shadow-sm;
+  }
+  .btn-secondary {
+    @apply btn bg-brand-off-white text-brand-black border border-brand-border hover:bg-brand-orange-light hover:border-brand-orange-border shadow-sm;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-brand-black hover:bg-brand-orange-light hover:text-brand-orange-dark;
+  }
+  .btn-outline {
+    @apply btn border border-brand-orange text-brand-orange bg-transparent hover:bg-brand-orange hover:text-white;
+  }
+  .btn-lg {
+    @apply rounded-md px-8 py-3 text-base;
+    min-height: 3rem;
+  }
+  .btn-sm {
+    @apply rounded-md px-3 py-1.5 text-xs;
+    min-height: 2rem;
+  }
+  /* shadcn card */
+  .card {
+    @apply rounded-lg border border-brand-border bg-card text-card-foreground shadow-sm;
+  }
+  /* shadcn badge */
+  .badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  }
+  .badge-default {
+    @apply badge border-transparent bg-brand-orange text-white;
+  }
+  .badge-outline {
+    @apply badge border-brand-orange-border bg-brand-orange-light text-brand-orange;
+  }
+  .badge-secondary {
+    @apply badge border-transparent bg-secondary text-secondary-foreground;
+  }
 }
 
 /* ── Animate on scroll ── */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .animate-on-scroll.visible {
   opacity: 1;
@@ -28,7 +107,6 @@ body {
 }
 
 /* ── Equal-height card rows ── */
-/* Any direct flex/grid parent will stretch children to tallest sibling */
 .equal-height {
   display: grid;
   align-items: stretch;
@@ -37,22 +115,21 @@ body {
   height: 100%;
 }
 
-/* Focus ring */
-*:focus-visible {
-  outline: 2px solid #F97316;
-  outline-offset: 2px;
-}
-
-/* Selection */
-::selection {
-  background: #F97316;
-  color: #fff;
-}
-
-/* Orange gradient text utility */
+/* ── Orange gradient text ── */
 .text-gradient-orange {
   background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── shadcn focus ring ── */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #F97316;
+  color: #fff;
 }

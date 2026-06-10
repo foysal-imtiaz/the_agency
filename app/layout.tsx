@@ -3,59 +3,44 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
+export const runtime = 'edge'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nexusdigital.agency'),
+  metadataBase: new URL('https://definecore.agency'),
   title: {
-    default: 'Nexus Digital — Digital Marketing Agency for US Businesses',
-    template: '%s | Nexus Digital',
+    default: 'DefineCore — Where Technology Meets Growth',
+    template: '%s | DefineCore',
   },
-  description: 'Nexus Digital helps US-based offline businesses build a powerful online presence. Website development, Google Ads, Meta Ads, GA4 analytics, and social media management.',
-  keywords: ['digital marketing agency', 'website development', 'Google Ads', 'Meta Ads', 'GA4 analytics', 'social media management', 'US small business'],
-  authors: [{ name: 'Nexus Digital' }],
+  description: 'DefineCore is a tech-powered growth studio helping US businesses build their digital presence — from high-performance websites to precision ad campaigns and data-driven analytics.',
+  keywords: ['growth studio', 'website development', 'Google Ads', 'Meta Ads', 'GA4 analytics', 'social media', 'US small business', 'digital marketing', 'tech agency'],
+  authors: [{ name: 'DefineCore' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://nexusdigital.agency',
-    siteName: 'Nexus Digital',
-    title: 'Nexus Digital — Digital Marketing Agency for US Businesses',
-    description: 'We help US-based offline businesses build a powerful online presence through websites, paid ads, analytics, and social media.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Nexus Digital — Digital Marketing Agency',
-      },
-    ],
+    url: 'https://definecore.agency',
+    siteName: 'DefineCore',
+    title: 'DefineCore — Where Technology Meets Growth',
+    description: 'Tech-powered growth studio helping US businesses dominate online — websites, ads, analytics, and social media.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DefineCore — Tech-Powered Growth Studio' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nexus Digital — Digital Marketing Agency',
-    description: 'We help US-based offline businesses get online and grow.',
+    title: 'DefineCore — Where Technology Meets Growth',
+    description: 'Tech-powered growth studio for US businesses.',
     images: ['/og-image.png'],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-brand-off-white text-brand-black antialiased">
+      <body className="bg-brand-off-white text-brand-black antialiased min-h-screen">
         <Navbar />
         <main id="main-content" className="pt-[73px]">
           {children}

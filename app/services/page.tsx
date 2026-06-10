@@ -1,20 +1,22 @@
 import Link from 'next/link'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
 
+export const runtime = 'edge'
+
 export const metadata = {
-  title: 'Services & Pricing — Website, Ads, Analytics & Social Media',
-  description: 'Explore Nexus Digital\'s full service menu: website development, Google Ads, Meta Ads, GA4 analytics setup, social media management, and full growth packages with transparent pricing.',
+  title: 'Services & Pricing — Websites, Ads, Analytics & Social',
+  description: 'DefineCore\'s full service menu: website development, Google Ads, Meta Ads, GA4 analytics, social media management, and full growth packages with transparent pricing.',
   openGraph: {
-    title: 'Services & Pricing | Nexus Digital',
-    description: 'Website development, Google Ads, Meta Ads, GA4 analytics, and social media packages for US businesses.',
+    title: 'Services & Pricing | DefineCore',
+    description: 'Websites, ads, analytics, and social packages for US businesses.',
   },
 }
 
 const workProcess = [
-  { step: '01', title: 'Discovery Audit', desc: 'We review your current online presence, competitors, and opportunities. You get an honest gap analysis before you spend a dollar.' },
-  { step: '02', title: 'Strategy', desc: 'Based on the audit, we present a tailored roadmap — specific channels, budgets, timelines, and expected outcomes.' },
-  { step: '03', title: 'Execution', desc: 'Our team builds and launches everything. You\'re kept in the loop with progress updates and a shared project board.' },
-  { step: '04', title: 'Reporting', desc: 'Monthly reports with plain-English summaries, KPI progress, and what we\'re doing next. No fluff, no vanity metrics.' },
+  { step: '01', title: 'Discovery Audit', desc: 'We review your current online presence, competitors, and opportunities — and give you an honest gap analysis before you spend a dollar.' },
+  { step: '02', title: 'Strategy', desc: 'A tailored roadmap with specific channels, budgets, timelines, and expected outcomes. No guesswork.' },
+  { step: '03', title: 'Execution', desc: 'Our team builds and launches everything. You\'re in the loop with updates and a shared project board.' },
+  { step: '04', title: 'Reporting', desc: 'Monthly plain-English reports with KPI progress and what we\'re doing next. No fluff, no vanity metrics.' },
 ]
 
 const services = [
@@ -22,15 +24,15 @@ const services = [
     id: 'website',
     tag: 'Website Development',
     title: 'A website that works as hard as you do',
-    desc: 'Your website is your 24/7 salesperson. We build fast, mobile-first websites designed to turn visitors into paying customers — whether you need a powerful WordPress site or a custom Next.js web app.',
-    audience: 'Perfect for: Local service businesses, retail stores, restaurants, clinics, and any business that needs to establish credibility online.',
+    desc: 'Your website is your 24/7 salesperson. We build fast, mobile-first websites designed to convert visitors into paying customers — WordPress for flexibility, Next.js for performance.',
+    audience: 'Perfect for: Local service businesses, retail stores, restaurants, clinics, and any business that needs credibility online.',
     deliverables: [
       'Custom design aligned to your brand',
       'Mobile-first responsive layout',
       'On-page SEO optimization',
       'Contact forms & lead capture',
       'Google Analytics 4 integration',
-      'Fast load time (< 2s target)',
+      'Sub-2s load time target',
       '30 days post-launch support',
     ],
   },
@@ -38,12 +40,12 @@ const services = [
     id: 'google-ads',
     tag: 'Google Ads',
     title: 'Show up when customers are searching',
-    desc: 'Google Ads put your business in front of people actively searching for exactly what you offer. We handle everything from keyword research to campaign optimization — your only job is to answer the calls.',
+    desc: 'Google Ads put your business in front of people actively searching for exactly what you offer. We handle everything from keyword research to bid optimization — you just answer the calls.',
     audience: 'Perfect for: Service businesses needing immediate leads — contractors, lawyers, dentists, plumbers, HVAC, and local retailers.',
     deliverables: [
       'Keyword research & competitor analysis',
       'Campaign & ad group structure',
-      'Compelling ad copy (3 variants)',
+      'Ad copy creation (3 variants)',
       'Landing page recommendations',
       'Conversion tracking setup',
       'Weekly bid optimization',
@@ -54,8 +56,8 @@ const services = [
     id: 'meta-ads',
     tag: 'Meta Ads',
     title: 'Reach your ideal customers on Facebook & Instagram',
-    desc: 'With over 3 billion users, Meta\'s advertising platform is one of the most powerful tools for local business growth. We create scroll-stopping ads that build awareness and drive measurable results.',
-    audience: 'Perfect for: Consumer brands, restaurants, salons, fitness studios, e-commerce, and businesses with strong visual products or services.',
+    desc: 'Meta\'s 3B+ user platform is one of the most powerful tools for local business growth. We create scroll-stopping ads that build awareness and drive measurable, attributable results.',
+    audience: 'Perfect for: Consumer brands, restaurants, salons, fitness studios, e-commerce, and businesses with visual products or services.',
     deliverables: [
       'Audience research & targeting strategy',
       'Ad creative brief & copy',
@@ -70,26 +72,26 @@ const services = [
     id: 'analytics',
     tag: 'GA4 Analytics',
     title: 'Know exactly what\'s driving your business',
-    desc: 'Most businesses are flying blind. GA4 Analytics setup gives you a clear picture of where customers come from, what they do on your site, and which marketing channels actually pay off.',
-    audience: 'Perfect for: Any business with a website that wants to make data-driven decisions instead of guessing what\'s working.',
+    desc: 'Most businesses are flying blind. GA4 setup gives you a clear picture of where customers come from, what they do on your site, and which channels actually pay off.',
+    audience: 'Perfect for: Any business with a website that wants to make data-driven decisions instead of guessing.',
     deliverables: [
       'GA4 property setup & configuration',
       'Custom event tracking (forms, calls, clicks)',
       'Google Tag Manager setup',
       'Goal & conversion configuration',
-      'Custom dashboard in Looker Studio',
+      'Custom Looker Studio dashboard',
       'UTM tracking framework',
-      'Training session (1 hour)',
+      '1-hour training session',
     ],
   },
   {
     id: 'social',
     tag: 'Social Media Presence',
     title: 'A professional social presence that builds trust',
-    desc: 'Your customers check your social media before they call. We set up your profiles correctly, create a content strategy that fits your business, and build a consistent brand voice across every platform.',
-    audience: 'Perfect for: New businesses launching their first online presence, or established businesses with outdated or incomplete social profiles.',
+    desc: 'Customers check your social media before they call. We set up your profiles correctly, create a content strategy that fits your business, and build a consistent brand voice.',
+    audience: 'Perfect for: New businesses launching online, or established businesses with outdated or incomplete social profiles.',
     deliverables: [
-      'Platform audit (Facebook, Instagram, Google Business)',
+      'Audit: Facebook, Instagram, Google Business',
       'Profile optimization & brand alignment',
       'Content strategy & content calendar',
       'Bio, cover art, and highlight templates',
@@ -108,9 +110,9 @@ const packages = [
     note: '/month',
     desc: 'Everything you need to start winning online — ads, analytics, and social presence fully managed.',
     features: [
-      'Google Ads campaign setup & management',
+      'Google Ads setup & management',
       'Meta Ads (Facebook + Instagram)',
-      'GA4 Analytics setup + custom dashboard',
+      'GA4 Analytics + custom dashboard',
       'Social media presence setup',
       'Monthly performance report',
       'Dedicated account manager',
@@ -123,14 +125,14 @@ const packages = [
     subtitle: 'Website + Digital Marketing',
     price: '$4,500',
     note: '/month',
-    desc: 'A professional website combined with a full-stack marketing engine — the complete online presence.',
+    desc: 'A high-performance website combined with a full marketing engine — the complete digital presence.',
     features: [
       'Everything in Launch',
       'Custom website (WordPress or Next.js)',
       'On-page SEO optimization',
-      'Landing page creation for campaigns',
+      'Campaign landing pages',
       'Bi-weekly strategy calls',
-      'Priority support & faster turnaround',
+      'Priority support & faster delivery',
     ],
     cta: 'Get the Full Stack',
     highlight: true,
@@ -140,7 +142,7 @@ const packages = [
     subtitle: 'Custom Advanced Package',
     price: 'Custom',
     note: 'quote',
-    desc: 'For businesses ready to invest seriously — custom web apps, advanced analytics, and full-channel marketing.',
+    desc: 'For businesses ready to invest seriously — custom web apps, advanced analytics, full-channel marketing.',
     features: [
       'Everything in Accelerate',
       'Custom Next.js web application',
@@ -154,29 +156,41 @@ const packages = [
   },
 ]
 
+function CheckIcon({ inverted = false }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-0.5">
+      <circle cx="7" cy="7" r="6" fill={inverted ? 'rgba(255,255,255,0.18)' : '#fff7ed'} />
+      <path d="M4 7l2.5 2.5L10 4.5" stroke={inverted ? '#fff' : '#F97316'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export default function ServicesPage() {
   return (
     <>
-      {/* How We Work */}
-      <section className="bg-brand-orange-light py-20 md:py-24" style={{ borderBottom: '1px solid #FED7AA' }}>
-        <div className="max-w-container mx-auto px-8">
+      {/* Page intro + How We Work */}
+      <section className="bg-brand-orange-light py-20 md:py-24" style={{ borderBottom: '1px solid #fed7aa' }}>
+        <div className="max-w-container mx-auto px-6 md:px-8">
           <AnimateOnScroll>
-            <p className="text-caption font-semibold uppercase tracking-widest text-brand-orange mb-3">Our Approach</p>
-            <h1 className="text-h2 md:text-display font-normal text-brand-black mb-4 max-w-3xl">
-              Transparent pricing.<br /><span className="font-semibold">Real results.</span>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Services & Pricing</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight leading-tight">
+              Transparent pricing.<br /><span className="text-gradient-orange">Real results.</span>
             </h1>
-            <p className="text-body-lg text-brand-dark max-w-2xl mb-12">
+            <p className="text-lg text-brand-dark/80 max-w-2xl mb-14">
               Every service is priced clearly upfront. No hidden fees, no surprise invoices. Start with what you need and scale as you grow.
             </p>
           </AnimateOnScroll>
 
+          <AnimateOnScroll>
+            <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange/70 mb-5">How We Work</p>
+          </AnimateOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 equal-height">
             {workProcess.map((w, i) => (
-              <AnimateOnScroll key={w.step} delay={i * 80}>
-                <div className="flex flex-col p-6 bg-brand-off-white border border-brand-orange-border rounded-brand shadow-brand-sm h-full">
-                  <span className="text-h2 font-semibold text-brand-orange/20 block mb-3 leading-none">{w.step}</span>
-                  <h3 className="text-body font-semibold text-brand-black mb-2">{w.title}</h3>
-                  <p className="text-body-sm text-brand-dark leading-relaxed flex-1">{w.desc}</p>
+              <AnimateOnScroll key={w.step} delay={i * 70}>
+                <div className="flex flex-col p-6 bg-white border border-brand-orange-border rounded-lg shadow-brand-sm h-full">
+                  <span className="text-3xl font-black text-brand-orange/15 block mb-3 leading-none tabular-nums">{w.step}</span>
+                  <h3 className="text-sm font-semibold text-brand-black mb-2">{w.title}</h3>
+                  <p className="text-sm text-brand-mid leading-relaxed flex-1">{w.desc}</p>
                 </div>
               </AnimateOnScroll>
             ))}
@@ -189,33 +203,30 @@ export default function ServicesPage() {
         <section
           key={svc.id}
           id={svc.id}
-          className={`py-20 md:py-28 ${idx % 2 === 0 ? 'bg-brand-off-white' : 'bg-brand-cream'}`}
-          style={{ borderBottom: '1px solid #E4E3DE' }}
+          className={`py-20 md:py-24 ${idx % 2 === 0 ? 'bg-brand-off-white' : 'bg-brand-cream'}`}
+          style={{ borderBottom: '1px solid #e4e4e7' }}
         >
-          <div className="max-w-container mx-auto px-8">
+          <div className="max-w-container mx-auto px-6 md:px-8">
             <AnimateOnScroll>
-              <div className="max-w-3xl mb-10">
-                <span className="inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-widest text-brand-orange mb-4">
-                  <span className="w-1 h-4 bg-brand-orange inline-block rounded-full"/>
+              <div className="max-w-3xl mb-8">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-orange mb-4">
+                  <span className="w-1 h-4 bg-brand-orange inline-block rounded-full" />
                   {svc.tag}
                 </span>
-                <h2 className="text-h2 font-semibold text-brand-black mb-4">{svc.title}</h2>
-                <p className="text-body-lg text-brand-dark leading-relaxed mb-3">{svc.desc}</p>
-                <p className="text-body-sm text-brand-mid italic">{svc.audience}</p>
+                <h2 className="text-3xl font-bold text-brand-black mb-4 tracking-tight">{svc.title}</h2>
+                <p className="text-lg text-brand-dark/80 leading-relaxed mb-3">{svc.desc}</p>
+                <p className="text-sm text-brand-mid italic">{svc.audience}</p>
               </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <div className="mb-10 p-6 bg-brand-orange-light border border-brand-orange-border rounded-brand">
-                <p className="text-body-sm font-semibold text-brand-black mb-4 uppercase tracking-widest">What's Included</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
+              <div className="mb-8 p-5 bg-brand-orange-light border border-brand-orange-border rounded-lg">
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-4">What's Included</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2.5">
                   {svc.deliverables.map(d => (
                     <div key={d} className="flex items-start gap-2">
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-1">
-                        <circle cx="7" cy="7" r="6" fill="#FFF7ED"/>
-                        <path d="M4 7l2.5 2.5L10 4.5" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      <span className="text-body-sm text-brand-dark">{d}</span>
+                      <CheckIcon />
+                      <span className="text-sm text-brand-dark">{d}</span>
                     </div>
                   ))}
                 </div>
@@ -223,10 +234,7 @@ export default function ServicesPage() {
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white text-body rounded-brand min-h-touch hover:bg-brand-orange-dark transition-colors duration-150 shadow-orange-sm"
-              >
+              <Link href="/contact" className="btn-default btn-lg shadow-orange-sm">
                 Get Started with {svc.tag}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
@@ -235,59 +243,56 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      {/* Packages Pricing */}
-      <section id="packages" className="bg-brand-grain py-24 md:py-32" style={{ borderBottom: '1px solid #E4E3DE' }}>
-        <div className="max-w-container mx-auto px-8">
+      {/* Packages */}
+      <section id="packages" className="bg-brand-grain py-24 md:py-32" style={{ borderBottom: '1px solid #e4e4e7' }}>
+        <div className="max-w-container mx-auto px-6 md:px-8">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-12">
-              <p className="text-caption font-semibold uppercase tracking-widest text-brand-orange mb-3">Packages</p>
-              <h2 className="text-h2 font-semibold text-brand-black mb-4">Everything bundled. Maximum results.</h2>
-              <p className="text-body-lg text-brand-dark">One partner for your entire online presence — website, ads, analytics, and social — at a bundled rate.</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Growth Packages</p>
+              <h2 className="text-h2 font-bold text-brand-black mb-3 tracking-tight">Everything bundled. Maximum results.</h2>
+              <p className="text-lg text-brand-mid">One partner for your entire online presence — at a bundled rate.</p>
             </div>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 equal-height">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 equal-height">
             {packages.map((pkg, i) => (
               <AnimateOnScroll key={pkg.name} delay={i * 80}>
-                <div className={`relative flex flex-col rounded-brand border p-8 h-full transition-shadow duration-200 ${
+                <div className={`relative flex flex-col rounded-lg border p-7 h-full transition-all duration-200 ${
                   pkg.highlight
                     ? 'bg-brand-orange border-brand-orange shadow-orange-md'
-                    : 'bg-brand-off-white border-brand-border hover:shadow-brand-sm'
+                    : 'bg-white border-brand-border shadow-brand-sm hover:border-brand-orange-border hover:shadow-brand-md'
                 }`}>
                   {pkg.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-charcoal text-white text-caption font-semibold rounded-full">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-orange-mid inline-block"/>
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+                      <span className="badge-default gap-1.5 shadow-brand-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-orange-mid" />
                         Most Popular
                       </span>
                     </div>
                   )}
                   <div className="mb-6">
-                    <p className={`text-caption font-semibold uppercase tracking-widest mb-1 ${pkg.highlight ? 'text-white/70' : 'text-brand-orange'}`}>{pkg.name}</p>
-                    <p className={`text-body-sm mb-4 ${pkg.highlight ? 'text-white/80' : 'text-brand-mid'}`}>{pkg.subtitle}</p>
+                    <p className={`text-[11px] font-semibold uppercase tracking-widest mb-1 ${pkg.highlight ? 'text-white/60' : 'text-brand-orange'}`}>{pkg.name}</p>
+                    <p className={`text-xs mb-4 ${pkg.highlight ? 'text-white/70' : 'text-brand-mid'}`}>{pkg.subtitle}</p>
                     <div className="flex items-baseline gap-1.5">
-                      <span className={`text-h2 font-semibold ${pkg.highlight ? 'text-white' : 'text-brand-black'}`}>{pkg.price}</span>
-                      <span className={`text-body-sm ${pkg.highlight ? 'text-white/60' : 'text-brand-mid'}`}>{pkg.note}</span>
+                      <span className={`text-4xl font-bold tracking-tight ${pkg.highlight ? 'text-white' : 'text-brand-black'}`}>{pkg.price}</span>
+                      <span className={`text-sm ${pkg.highlight ? 'text-white/55' : 'text-brand-mid'}`}>{pkg.note}</span>
                     </div>
-                    <p className={`text-body-sm mt-3 leading-relaxed ${pkg.highlight ? 'text-white/75' : 'text-brand-dark'}`}>{pkg.desc}</p>
+                    <p className={`text-sm mt-3 leading-relaxed ${pkg.highlight ? 'text-white/75' : 'text-brand-mid'}`}>{pkg.desc}</p>
                   </div>
-                  <ul className="flex flex-col gap-3 flex-1 mb-8">
+                  <ul className="flex flex-col gap-3 flex-1 mb-7">
                     {pkg.features.map(f => (
-                      <li key={f} className="flex items-start gap-3 text-body-sm">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="flex-shrink-0 mt-0.5">
-                          <circle cx="8" cy="8" r="7" fill={pkg.highlight ? 'rgba(255,255,255,0.2)' : '#FFF7ED'}/>
-                          <path d="M5 8l2.5 2.5L11 5.5" stroke={pkg.highlight ? '#fff' : '#F97316'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        <CheckIcon inverted={pkg.highlight} />
                         <span className={pkg.highlight ? 'text-white/85' : 'text-brand-dark'}>{f}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="/contact"
-                    className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-brand text-body min-h-touch transition-colors duration-150 ${
+                    className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-150 min-h-touch ${
                       pkg.highlight
-                        ? 'bg-white text-brand-orange hover:bg-brand-orange-light font-medium'
-                        : 'bg-brand-orange text-white hover:bg-brand-orange-dark'
+                        ? 'bg-white text-brand-orange hover:bg-brand-orange-light'
+                        : 'bg-brand-orange text-white hover:bg-brand-orange-dark shadow-orange-sm'
                     }`}
                   >
                     {pkg.cta}
@@ -299,9 +304,9 @@ export default function ServicesPage() {
           </div>
 
           <AnimateOnScroll>
-            <p className="text-body-sm text-brand-mid text-center mt-6">
-              All plans include a free onboarding call. Not sure which fits?{' '}
-              <Link href="/contact" className="text-brand-orange underline hover:text-brand-orange-dark">Let's talk →</Link>
+            <p className="text-sm text-brand-mid text-center mt-6">
+              All plans include a free onboarding call.{' '}
+              <Link href="/contact" className="text-brand-orange hover:text-brand-orange-dark underline underline-offset-4">Not sure which fits? Let's talk →</Link>
             </p>
           </AnimateOnScroll>
         </div>
@@ -309,13 +314,13 @@ export default function ServicesPage() {
 
       {/* Bottom CTA */}
       <section className="bg-brand-charcoal py-24">
-        <div className="max-w-container mx-auto px-8 text-center">
+        <div className="max-w-container mx-auto px-6 md:px-8 text-center">
           <AnimateOnScroll>
-            <h2 className="text-h2 font-semibold text-brand-off-white mb-4">Still deciding?</h2>
-            <p className="text-body-lg text-white/60 max-w-xl mx-auto mb-8">
-              Let's get on a call for 30 minutes. We'll help you figure out exactly what your business needs.
+            <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Still deciding?</h2>
+            <p className="text-lg text-white/55 max-w-xl mx-auto mb-8">
+              30 minutes with our team costs nothing. We'll help you figure out exactly what your business needs.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange text-white text-body rounded-brand min-h-touch hover:bg-brand-orange-dark transition-colors duration-150 shadow-orange-sm">
+            <Link href="/contact" className="btn-default btn-lg shadow-orange-md">
               Book Free Strategy Call
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>

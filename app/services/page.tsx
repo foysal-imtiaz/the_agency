@@ -13,10 +13,10 @@ export const metadata = {
 }
 
 const workProcess = [
-  { step: '01', title: 'Discovery Audit', desc: 'We review your current online presence, competitors, and opportunities — and give you an honest gap analysis before you spend a dollar.' },
+  { step: '01', title: 'Discovery Audit', desc: 'We review your online presence, competitors, and opportunities — and give you an honest gap analysis before you spend a dollar.' },
   { step: '02', title: 'Strategy', desc: 'A tailored roadmap with specific channels, budgets, timelines, and expected outcomes. No guesswork.' },
-  { step: '03', title: 'Execution', desc: 'Our team builds and launches everything. You\'re in the loop with updates and a shared project board.' },
-  { step: '04', title: 'Reporting', desc: 'Monthly plain-English reports with KPI progress and what we\'re doing next. No fluff, no vanity metrics.' },
+  { step: '03', title: 'Execution', desc: 'Our team builds and launches everything. You\'re in the loop with a shared project board.' },
+  { step: '04', title: 'Reporting', desc: 'Monthly plain-English reports with KPI progress and next steps. No fluff, no vanity metrics.' },
 ]
 
 const services = [
@@ -56,8 +56,8 @@ const services = [
     id: 'meta-ads',
     tag: 'Meta Ads',
     title: 'Reach your ideal customers on Facebook & Instagram',
-    desc: 'Meta\'s 3B+ user platform is one of the most powerful tools for local business growth. We create scroll-stopping ads that build awareness and drive measurable, attributable results.',
-    audience: 'Perfect for: Consumer brands, restaurants, salons, fitness studios, e-commerce, and businesses with visual products or services.',
+    desc: 'Meta\'s platform is one of the most powerful tools for local business growth. We create scroll-stopping ads that build awareness and drive measurable, attributable results.',
+    audience: 'Perfect for: Consumer brands, restaurants, salons, fitness studios, and businesses with visual products or services.',
     deliverables: [
       'Audience research & targeting strategy',
       'Ad creative brief & copy',
@@ -76,7 +76,7 @@ const services = [
     audience: 'Perfect for: Any business with a website that wants to make data-driven decisions instead of guessing.',
     deliverables: [
       'GA4 property setup & configuration',
-      'Custom event tracking (forms, calls, clicks)',
+      'Custom event tracking',
       'Google Tag Manager setup',
       'Goal & conversion configuration',
       'Custom Looker Studio dashboard',
@@ -89,12 +89,12 @@ const services = [
     tag: 'Social Media Presence',
     title: 'A professional social presence that builds trust',
     desc: 'Customers check your social media before they call. We set up your profiles correctly, create a content strategy that fits your business, and build a consistent brand voice.',
-    audience: 'Perfect for: New businesses launching online, or established businesses with outdated or incomplete social profiles.',
+    audience: 'Perfect for: New businesses launching online, or established businesses with outdated social profiles.',
     deliverables: [
       'Audit: Facebook, Instagram, Google Business',
       'Profile optimization & brand alignment',
       'Content strategy & content calendar',
-      'Bio, cover art, and highlight templates',
+      'Bio, cover art & highlight templates',
       '30 days of post ideas & captions',
       'Hashtag & engagement strategy',
       'Content guidelines document',
@@ -156,7 +156,7 @@ const packages = [
   },
 ]
 
-function CheckIcon({ inverted = false }) {
+function CheckIcon({ inverted = false }: { inverted?: boolean }) {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-0.5">
       <circle cx="7" cy="7" r="6" fill={inverted ? 'rgba(255,255,255,0.18)' : '#fff7ed'} />
@@ -169,14 +169,15 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page intro + How We Work */}
-      <section className="bg-brand-orange-light py-20 md:py-24" style={{ borderBottom: '1px solid #fed7aa' }}>
+      <section className="bg-brand-orange-light py-20 md:py-24 overflow-x-hidden" style={{ borderBottom: '1px solid #fed7aa' }}>
         <div className="max-w-container mx-auto px-6 md:px-8">
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Services & Pricing</p>
             <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight leading-tight">
-              Transparent pricing.<br /><span className="text-gradient-orange">Real results.</span>
+              Transparent pricing.<br />
+              <span className="text-gradient-orange">Real results.</span>
             </h1>
-            <p className="text-lg text-brand-dark/80 max-w-2xl mb-14">
+            <p className="text-base md:text-lg text-brand-dark/80 max-w-2xl mb-12">
               Every service is priced clearly upfront. No hidden fees, no surprise invoices. Start with what you need and scale as you grow.
             </p>
           </AnimateOnScroll>
@@ -184,10 +185,12 @@ export default function ServicesPage() {
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange/70 mb-5">How We Work</p>
           </AnimateOnScroll>
+
+          {/* Process: 1 col mobile, 2 col tablet, 4 col desktop */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 equal-height">
             {workProcess.map((w, i) => (
               <AnimateOnScroll key={w.step} delay={i * 70}>
-                <div className="flex flex-col p-6 bg-white border border-brand-orange-border rounded-lg shadow-brand-sm h-full">
+                <div className="flex flex-col p-5 bg-white border border-brand-orange-border rounded-lg shadow-brand-sm h-full">
                   <span className="text-3xl font-black text-brand-orange/15 block mb-3 leading-none tabular-nums">{w.step}</span>
                   <h3 className="text-sm font-semibold text-brand-black mb-2">{w.title}</h3>
                   <p className="text-sm text-brand-mid leading-relaxed flex-1">{w.desc}</p>
@@ -203,38 +206,41 @@ export default function ServicesPage() {
         <section
           key={svc.id}
           id={svc.id}
-          className={`py-20 md:py-24 ${idx % 2 === 0 ? 'bg-brand-off-white' : 'bg-brand-cream'}`}
+          className={`py-16 md:py-24 overflow-x-hidden ${idx % 2 === 0 ? 'bg-brand-off-white' : 'bg-brand-cream'}`}
           style={{ borderBottom: '1px solid #e4e4e7' }}
         >
           <div className="max-w-container mx-auto px-6 md:px-8">
+
+            {/* Header */}
             <AnimateOnScroll>
-              <div className="max-w-3xl mb-8">
+              <div className="mb-7">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-orange mb-4">
-                  <span className="w-1 h-4 bg-brand-orange inline-block rounded-full" />
+                  <span className="w-1 h-4 bg-brand-orange inline-block rounded-full flex-shrink-0" />
                   {svc.tag}
                 </span>
-                <h2 className="text-3xl font-bold text-brand-black mb-4 tracking-tight">{svc.title}</h2>
-                <p className="text-lg text-brand-dark/80 leading-relaxed mb-3">{svc.desc}</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-3 tracking-tight leading-snug">{svc.title}</h2>
+                <p className="text-base text-brand-dark/80 leading-relaxed mb-2 max-w-3xl">{svc.desc}</p>
                 <p className="text-sm text-brand-mid italic">{svc.audience}</p>
               </div>
             </AnimateOnScroll>
 
+            {/* Deliverables — single column on mobile, 2-col on sm+ */}
             <AnimateOnScroll>
-              <div className="mb-8 p-5 bg-brand-orange-light border border-brand-orange-border rounded-lg">
+              <div className="mb-7 p-5 bg-brand-orange-light border border-brand-orange-border rounded-lg">
                 <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-4">What's Included</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2.5">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
                   {svc.deliverables.map(d => (
-                    <div key={d} className="flex items-start gap-2">
+                    <li key={d} className="flex items-start gap-2 min-w-0">
                       <CheckIcon />
-                      <span className="text-sm text-brand-dark">{d}</span>
-                    </div>
+                      <span className="text-sm text-brand-dark break-words">{d}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <Link href="/contact" className="btn-default btn-lg shadow-orange-sm">
+              <Link href="/contact" className="btn-default btn-lg shadow-orange-sm w-full sm:w-auto justify-center">
                 Get Started with {svc.tag}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </Link>
@@ -244,7 +250,7 @@ export default function ServicesPage() {
       ))}
 
       {/* Packages */}
-      <section id="packages" className="bg-brand-grain py-24 md:py-32" style={{ borderBottom: '1px solid #e4e4e7' }}>
+      <section id="packages" className="bg-brand-grain py-24 md:py-32 overflow-x-hidden" style={{ borderBottom: '1px solid #e4e4e7' }}>
         <div className="max-w-container mx-auto px-6 md:px-8">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-12">
@@ -254,42 +260,43 @@ export default function ServicesPage() {
             </div>
           </AnimateOnScroll>
 
+          {/* Stack on mobile, 3-col on md+ */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 equal-height">
             {packages.map((pkg, i) => (
               <AnimateOnScroll key={pkg.name} delay={i * 80}>
-                <div className={`relative flex flex-col rounded-lg border p-7 h-full transition-all duration-200 ${
+                <div className={`relative flex flex-col rounded-lg border p-6 md:p-7 h-full transition-all duration-200 ${
                   pkg.highlight
                     ? 'bg-brand-orange border-brand-orange shadow-orange-md'
                     : 'bg-white border-brand-border shadow-brand-sm hover:border-brand-orange-border hover:shadow-brand-md'
                 }`}>
                   {pkg.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                       <span className="badge-default gap-1.5 shadow-brand-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-brand-orange-mid" />
                         Most Popular
                       </span>
                     </div>
                   )}
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <p className={`text-[11px] font-semibold uppercase tracking-widest mb-1 ${pkg.highlight ? 'text-white/60' : 'text-brand-orange'}`}>{pkg.name}</p>
                     <p className={`text-xs mb-4 ${pkg.highlight ? 'text-white/70' : 'text-brand-mid'}`}>{pkg.subtitle}</p>
-                    <div className="flex items-baseline gap-1.5">
+                    <div className="flex items-baseline gap-1.5 flex-wrap">
                       <span className={`text-4xl font-bold tracking-tight ${pkg.highlight ? 'text-white' : 'text-brand-black'}`}>{pkg.price}</span>
                       <span className={`text-sm ${pkg.highlight ? 'text-white/55' : 'text-brand-mid'}`}>{pkg.note}</span>
                     </div>
                     <p className={`text-sm mt-3 leading-relaxed ${pkg.highlight ? 'text-white/75' : 'text-brand-mid'}`}>{pkg.desc}</p>
                   </div>
-                  <ul className="flex flex-col gap-3 flex-1 mb-7">
+                  <ul className="flex flex-col gap-2.5 flex-1 mb-6">
                     {pkg.features.map(f => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                      <li key={f} className="flex items-start gap-2.5 text-sm min-w-0">
                         <CheckIcon inverted={pkg.highlight} />
-                        <span className={pkg.highlight ? 'text-white/85' : 'text-brand-dark'}>{f}</span>
+                        <span className={`break-words ${pkg.highlight ? 'text-white/85' : 'text-brand-dark'}`}>{f}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="/contact"
-                    className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-150 min-h-touch ${
+                    className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-150 min-h-[2.5rem] ${
                       pkg.highlight
                         ? 'bg-white text-brand-orange hover:bg-brand-orange-light'
                         : 'bg-brand-orange text-white hover:bg-brand-orange-dark shadow-orange-sm'

@@ -26,8 +26,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-brand-off-white/95 backdrop-blur-sm transition-all duration-200 ${scrolled ? 'shadow-brand-sm' : ''} border-b border-brand-border`}
-      style={{ height: '73px' }}
+      className={`fixed top-0 left-0 right-0 z-50 bg-brand-off-white/80 backdrop-blur-sm transition-all duration-200 ${scrolled ? 'shadow-brand-sm' : ''} border-b border-brand-border`}
+      style={{ height: '60px' }}
     >
       <div className="max-w-container mx-auto px-6 md:px-8 h-full flex items-center justify-between">
 

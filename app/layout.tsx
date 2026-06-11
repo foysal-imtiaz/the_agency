@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-brand-off-white text-brand-black antialiased min-h-screen">
         <Navbar />
-        <main id="main-content" className="pt-[73px]">
+        <main id="main-content" className="pt-[60px]">
           {children}
         </main>
         <Footer />

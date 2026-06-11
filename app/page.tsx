@@ -169,7 +169,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative bg-brand-off-white overflow-hidden">
+      <section className="relative bg-brand-off-white overflow-hidden flex flex-col" style={{ minHeight: "calc(100vh - 60px)" }}>
         {/* Orange radial glow */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 70% 45% at 50% 0%, rgba(249,115,22,0.09) 0%, transparent 65%)' }} />
@@ -188,7 +188,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to bottom, transparent, #FBFBF8)' }} />
 
-        <div className="max-w-container mx-auto px-6 md:px-8 pt-20 pb-16 relative">
+        <div className="max-w-container mx-auto px-6 md:px-8 py-16 md:py-20 relative flex flex-col justify-center flex-1">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
             <AnimateOnScroll>

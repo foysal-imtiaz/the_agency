@@ -106,9 +106,8 @@ const packages = [
   {
     name: 'Launch',
     subtitle: 'Digital Marketing',
-    price: '$2,500',
-    note: '/month',
-    desc: 'Everything you need to start winning online — ads, analytics, and social presence fully managed.',
+    tag: 'Get started',
+    desc: 'For businesses ready to show up online — ads, analytics, and social presence fully managed by our team.',
     features: [
       'Google Ads setup & management',
       'Meta Ads (Facebook + Instagram)',
@@ -117,15 +116,14 @@ const packages = [
       'Monthly performance report',
       'Dedicated account manager',
     ],
-    cta: 'Start Growing',
+    cta: 'Get a Quote',
     highlight: false,
   },
   {
     name: 'Accelerate',
     subtitle: 'Website + Digital Marketing',
-    price: '$4,500',
-    note: '/month',
-    desc: 'A high-performance website combined with a full marketing engine — the complete digital presence.',
+    tag: 'Most popular',
+    desc: 'A high-performance website combined with a full marketing engine — the complete digital presence built to scale.',
     features: [
       'Everything in Launch',
       'Custom website (WordPress or Next.js)',
@@ -134,15 +132,14 @@ const packages = [
       'Bi-weekly strategy calls',
       'Priority support & faster delivery',
     ],
-    cta: 'Get the Full Stack',
+    cta: 'Get a Quote',
     highlight: true,
   },
   {
     name: 'Dominate',
     subtitle: 'Custom Advanced Package',
-    price: 'Custom',
-    note: 'quote',
-    desc: 'For businesses ready to invest seriously — custom web apps, advanced analytics, full-channel marketing.',
+    tag: 'For serious growth',
+    desc: 'Fully bespoke engagement — custom web apps, advanced analytics, and full-channel marketing for ambitious businesses.',
     features: [
       'Everything in Accelerate',
       'Custom Next.js web application',
@@ -151,7 +148,7 @@ const packages = [
       'Full social media management',
       'Dedicated team + weekly calls',
     ],
-    cta: 'Talk to Us',
+    cta: "Let's Talk",
     highlight: false,
   },
 ]
@@ -178,7 +175,7 @@ export default function ServicesPage() {
               <span className="text-gradient-orange">Real results.</span>
             </h1>
             <p className="text-base md:text-lg text-brand-dark/80 max-w-2xl mb-12">
-              Every service is priced clearly upfront. No hidden fees, no surprise invoices. Start with what you need and scale as you grow.
+              Every package is tailored to your business. Start with what you need and scale as you grow — pricing is quoted after a free discovery call.
             </p>
           </AnimateOnScroll>
 
@@ -256,7 +253,18 @@ export default function ServicesPage() {
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Growth Packages</p>
               <h2 className="text-h2 font-bold text-brand-black mb-3 tracking-tight">Everything bundled. Maximum results.</h2>
-              <p className="text-lg text-brand-mid">One partner for your entire online presence — at a bundled rate.</p>
+              <p className="text-lg text-brand-mid">Pick the scope that fits your goals. Pricing is customised to your business after a free discovery call.</p>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Info banner */}
+          <AnimateOnScroll>
+            <div className="flex items-center gap-2.5 mb-8 p-3.5 bg-brand-orange-light border border-brand-orange-border rounded-lg w-fit">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0">
+                <circle cx="7" cy="7" r="6" stroke="#F97316" strokeWidth="1.3"/>
+                <path d="M7 4.5v3M7 9.5v.5" stroke="#F97316" strokeWidth="1.3" strokeLinecap="round"/>
+              </svg>
+              <p className="text-xs text-brand-orange font-medium">Pricing is scoped to your needs — get a custom quote in your free audit call.</p>
             </div>
           </AnimateOnScroll>
 
@@ -278,13 +286,16 @@ export default function ServicesPage() {
                     </div>
                   )}
                   <div className="mb-5">
-                    <p className={`text-[11px] font-semibold uppercase tracking-widest mb-1 ${pkg.highlight ? 'text-white/60' : 'text-brand-orange'}`}>{pkg.name}</p>
-                    <p className={`text-xs mb-4 ${pkg.highlight ? 'text-white/70' : 'text-brand-mid'}`}>{pkg.subtitle}</p>
-                    <div className="flex items-baseline gap-1.5 flex-wrap">
-                      <span className={`text-4xl font-bold tracking-tight ${pkg.highlight ? 'text-white' : 'text-brand-black'}`}>{pkg.price}</span>
-                      <span className={`text-sm ${pkg.highlight ? 'text-white/55' : 'text-brand-mid'}`}>{pkg.note}</span>
-                    </div>
-                    <p className={`text-sm mt-3 leading-relaxed ${pkg.highlight ? 'text-white/75' : 'text-brand-mid'}`}>{pkg.desc}</p>
+                    <span className={`inline-block text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full mb-3 ${
+                      pkg.highlight ? 'bg-white/20 text-white' : 'bg-brand-orange-light text-brand-orange border border-brand-orange-border'
+                    }`}>
+                      {pkg.tag}
+                    </span>
+                    <h3 className={`text-xl font-bold tracking-tight mb-1 ${pkg.highlight ? 'text-white' : 'text-brand-black'}`}>
+                      {pkg.name}
+                    </h3>
+                    <p className={`text-xs font-medium mb-4 ${pkg.highlight ? 'text-white/65' : 'text-brand-orange'}`}>{pkg.subtitle}</p>
+                    <p className={`text-sm leading-relaxed ${pkg.highlight ? 'text-white/75' : 'text-brand-mid'}`}>{pkg.desc}</p>
                   </div>
                   <ul className="flex flex-col gap-2.5 flex-1 mb-6">
                     {pkg.features.map(f => (

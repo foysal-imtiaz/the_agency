@@ -23,7 +23,6 @@ export default function Footer() {
       <div className="max-w-container mx-auto px-6 md:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
 
-          {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-5 w-fit">
               <span className="inline-flex items-center justify-center w-8 h-8 bg-brand-orange rounded-md">
@@ -32,18 +31,14 @@ export default function Footer() {
                   <path d="M13 10.5c1.5 0 3.5-1 3.5-3.5S14.5 3.5 13 3.5" stroke="white" strokeWidth="1.6" strokeLinecap="round"/>
                 </svg>
               </span>
-              <div className="flex flex-col leading-none">
-                <span className="text-[15px] font-semibold tracking-tight">DefineCore</span>
-                <span className="text-[9px] font-medium text-white/50 tracking-widest uppercase">Growth Studio</span>
-              </div>
+              <span className="text-[15px] font-semibold tracking-tight">DefineCore</span>
             </Link>
             <p className="text-sm text-white/60 max-w-xs leading-relaxed mb-6">
-              Tech-powered growth studio helping US businesses build their digital presence — websites, ads, analytics, and social media, all under one roof.
+              We help businesses build a powerful online presence — websites, ads, analytics, and social media, all under one roof.
             </p>
             <p className="text-xs text-white/35">📍 Serving clients across the United States</p>
           </div>
 
-          {/* Links */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group}>
               <h3 className="text-[11px] font-semibold uppercase tracking-widest text-brand-orange-mid mb-4">{group}</h3>

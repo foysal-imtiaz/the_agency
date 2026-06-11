@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-brand-off-white/95 backdrop-blur-sm transition-all duration-200 ${scrolled ? 'shadow-brand-sm border-b border-brand-border' : 'border-b border-brand-border'}`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-brand-off-white/95 backdrop-blur-sm transition-all duration-200 ${scrolled ? 'shadow-brand-sm' : ''} border-b border-brand-border`}
       style={{ height: '73px' }}
     >
       <div className="max-w-container mx-auto px-6 md:px-8 h-full flex items-center justify-between">
@@ -34,16 +34,12 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <span className="inline-flex items-center justify-center w-8 h-8 bg-brand-orange rounded-md shadow-orange-sm">
-            {/* DC monogram */}
-            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
               <path d="M1 1h4.5C8.5 1 10.5 3 10.5 7s-2 6-5 6H1V1z" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/>
               <path d="M13 10.5c1.5 0 3.5-1 3.5-3.5S14.5 3.5 13 3.5" stroke="white" strokeWidth="1.6" strokeLinecap="round"/>
             </svg>
           </span>
-          <div className="flex flex-col leading-none">
-            <span className="text-[15px] font-semibold text-brand-black tracking-tight">DefineCore</span>
-            <span className="text-[9px] font-medium text-brand-mid tracking-widest uppercase">Growth Studio</span>
-          </div>
+          <span className="text-[15px] font-semibold text-brand-black tracking-tight">DefineCore</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -69,15 +65,9 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-2">
-          <Link href="/contact" className="btn-ghost btn-sm text-brand-dark">
-            Log in
-          </Link>
-          <Link
-            href="/contact"
-            className="btn-default btn-sm px-4 shadow-orange-sm"
-          >
+        {/* Desktop CTA — single button only */}
+        <div className="hidden md:flex items-center">
+          <Link href="/contact" className="btn-default btn-sm px-4 shadow-orange-sm">
             Get a Free Audit
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>
@@ -91,13 +81,9 @@ export default function Navbar() {
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             {menuOpen ? (
-              <>
-                <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-              </>
+              <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
             ) : (
-              <>
-                <path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-              </>
+              <path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
             )}
           </svg>
         </button>
@@ -116,7 +102,7 @@ export default function Navbar() {
               </Link>
             )
           })}
-          <div className="pt-3 mt-1 border-t border-brand-border flex flex-col gap-2">
+          <div className="pt-3 mt-1 border-t border-brand-border">
             <Link href="/contact" className="btn-default btn w-full justify-center">
               Get a Free Audit
             </Link>

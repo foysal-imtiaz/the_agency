@@ -8,7 +8,7 @@ export const runtime = 'edge'
 export const metadata: Metadata = {
   metadataBase: new URL('https://definecore.agency'),
   title: {
-    default: 'DefineCore — Where Technology Meets Growth',
+    default: 'DefineCore',
     template: '%s | DefineCore',
   },
   description: 'DefineCore is a tech-powered growth studio helping US businesses build their digital presence — from high-performance websites to precision ad campaigns and data-driven analytics.',

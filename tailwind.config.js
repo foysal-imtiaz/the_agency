@@ -79,7 +79,7 @@ module.exports = {
         'orange-sm': '0 1px 3px 0 rgba(249,115,22,0.2)',
         'orange-md': '0 4px 14px 0 rgba(249,115,22,0.25)',
       },
-      maxWidth: { 'container': '1440px' },
+      maxWidth: { 'container': '1100px' },
       minHeight: { 'touch': '2.75rem' },
       keyframes: {
         'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },

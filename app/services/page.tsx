@@ -167,7 +167,7 @@ export default function ServicesPage() {
     <>
       {/* Page intro + How We Work */}
       <section className="bg-brand-orange-light py-20 md:py-24 overflow-x-hidden" style={{ borderBottom: '1px solid #fed7aa' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Services & Pricing</p>
             <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight leading-tight">
@@ -206,7 +206,7 @@ export default function ServicesPage() {
           className={`py-16 md:py-24 overflow-x-hidden ${idx % 2 === 0 ? 'bg-brand-off-white' : 'bg-brand-cream'}`}
           style={{ borderBottom: '1px solid #e4e4e7' }}
         >
-          <div className="max-w-container mx-auto px-6 md:px-8">
+          <div className="max-w-container mx-auto px-6 md:px-10">
 
             {/* Header */}
             <AnimateOnScroll>
@@ -248,7 +248,7 @@ export default function ServicesPage() {
 
       {/* Packages */}
       <section id="packages" className="bg-brand-grain py-24 md:py-32 overflow-x-hidden" style={{ borderBottom: '1px solid #e4e4e7' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Growth Packages</p>
@@ -332,7 +332,7 @@ export default function ServicesPage() {
 
       {/* Bottom CTA */}
       <section className="bg-brand-charcoal py-24">
-        <div className="max-w-container mx-auto px-6 md:px-8 text-center">
+        <div className="max-w-container mx-auto px-6 md:px-10 text-center">
           <AnimateOnScroll>
             <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Still deciding?</h2>
             <p className="text-lg text-white/55 max-w-xl mx-auto mb-8">

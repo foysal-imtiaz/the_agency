@@ -69,7 +69,7 @@ export default function AboutPage() {
     <>
       {/* ── STORY / INTRO ── */}
       <section className="bg-brand-orange-light py-20 md:py-28 overflow-hidden" style={{ borderBottom: '1px solid #fed7aa' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
 
             <AnimateOnScroll>
@@ -115,7 +115,7 @@ export default function AboutPage() {
 
       {/* ── WHAT WE STAND FOR + WHO WE WORK WITH (merged) ── */}
       <section className="bg-brand-off-white py-24 md:py-32" style={{ borderBottom: '1px solid #e4e4e7' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
 
           {/* Pillars */}
           <AnimateOnScroll>
@@ -183,7 +183,7 @@ export default function AboutPage() {
       <section className="bg-brand-charcoal py-24 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(249,115,22,0.1) 0%, transparent 70%)' }} />
-        <div className="max-w-container mx-auto px-6 md:px-8 text-center relative">
+        <div className="max-w-container mx-auto px-6 md:px-10 text-center relative">
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-5">Sound like a fit?</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">

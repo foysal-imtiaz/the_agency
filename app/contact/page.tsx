@@ -17,7 +17,7 @@ export default function ContactPage() {
     <>
       {/* Main contact section — acts as page header too */}
       <section className="bg-brand-orange-light py-20 md:py-24" style={{ borderBottom: '1px solid #fed7aa' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-4">Get in Touch</p>
             <h1 className="text-4xl md:text-5xl font-bold text-brand-black mb-4 tracking-tight leading-tight">
@@ -96,7 +96,7 @@ export default function ContactPage() {
 
       {/* Calendly embed placeholder */}
       <section id="calendly" className="bg-brand-off-white py-20" style={{ borderBottom: '1px solid #e4e4e7' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-4">Schedule Directly</p>
             <h2 className="text-3xl font-bold text-brand-black mb-3 tracking-tight">Book a free 30-min discovery call</h2>

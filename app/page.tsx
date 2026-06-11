@@ -188,13 +188,13 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to bottom, transparent, #FBFBF8)' }} />
 
-        <div className="max-w-container mx-auto px-6 md:px-8 py-16 md:py-20 relative flex flex-col justify-center flex-1">
+        <div className="max-w-container mx-auto px-6 md:px-10 py-16 md:py-20 relative flex flex-col justify-center flex-1">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
             <AnimateOnScroll>
               <div className="badge-outline mb-8 gap-1.5 py-1.5 px-3.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block" />
-                Digital Agency · Engineering + Marketing
+                We build. We market. You grow.
               </div>
             </AnimateOnScroll>
 
@@ -228,7 +228,7 @@ export default function Home() {
 
       {/* ── SERVICES — same bg, flows straight from hero ── */}
       <section className="bg-brand-off-white pt-8 pb-24 md:pb-32" id="services" style={{ borderBottom: '1px solid #e4e4e7' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">What We Do</p>
@@ -268,7 +268,7 @@ export default function Home() {
 
       {/* ── WHY US ── */}
       <section className="bg-brand-orange-light py-24 md:py-32" style={{ borderBottom: '1px solid #fed7aa' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Why DefineCore</p>
@@ -293,7 +293,7 @@ export default function Home() {
 
       {/* ── PROCESS ── */}
       <section className="bg-brand-off-white py-24 md:py-32" style={{ borderBottom: '1px solid #e4e4e7' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">How It Works</p>
@@ -331,7 +331,7 @@ export default function Home() {
 
       {/* ── PRICING — no prices shown ── */}
       <section className="bg-brand-grain py-24 md:py-32" style={{ borderBottom: '1px solid #e4e4e7' }}>
-        <div className="max-w-container mx-auto px-6 md:px-8">
+        <div className="max-w-container mx-auto px-6 md:px-10">
           <AnimateOnScroll>
             <div className="max-w-2xl mb-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-3">Packages</p>
@@ -420,7 +420,7 @@ export default function Home() {
       <section className="bg-brand-charcoal py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(249,115,22,0.12) 0%, transparent 70%)' }} />
-        <div className="max-w-container mx-auto px-6 md:px-8 text-center relative">
+        <div className="max-w-container mx-auto px-6 md:px-10 text-center relative">
           <AnimateOnScroll>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-orange mb-6">Ready to grow?</p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 max-w-3xl mx-auto leading-tight tracking-tight">

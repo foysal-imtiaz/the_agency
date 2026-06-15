@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://definecore.agency',
     siteName: 'DefineCore',
-    title: 'DefineCore — Where Technology Meets Growth',
+    title: 'DefineCore - Tech-Powered Growth Agency',
     description: 'Tech-powered growth studio helping US businesses dominate online — websites, ads, analytics, and social media.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'DefineCore — Tech-Powered Growth Studio' }],
   },
@@ -29,7 +29,10 @@ export const metadata: Metadata = {
     description: 'Tech-powered growth studio for US businesses.',
     images: ['/og-image.png'],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -38,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet" />
+        <link href="https://googleapis.com" rel="stylesheet" />
       </head>
       <body className="bg-brand-off-white text-brand-black antialiased min-h-screen">
         <Navbar />
